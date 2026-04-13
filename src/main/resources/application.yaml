@@ -3,7 +3,11 @@ server:
 
 spring:
   application:
-    name: account-service
+    name: account
+  profiles:
+    active: "prod"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
   datasource:
     url: jdbc:h2:mem:testdb
     username: sa
@@ -17,23 +21,3 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
-  config:
-    import:
-      - "application_qa.yaml"
-      - "application_prod.yaml"
-  profiles:
-    active:
-      - "qa"
-
-
-build:
-  version: "3.0"
-
-account:
-  message: "Welcome to EasyBank account's releated local API's"
-  contactDetails:
-    name: "Siddhant A"
-    email: "siddhantawathare6@gmail.com"
-  onCallSupport:
-    -(555)555-1234
-    -(555)555-1345
