@@ -1,6 +1,7 @@
 package com.bank.account.controller;
 
 import com.bank.account.constant.AccountConstant;
+import com.bank.account.dto.AccountContactInfoDto;
 import com.bank.account.dto.CustomerDto;
 import com.bank.account.dto.ErrorResponseDto;
 import com.bank.account.dto.ResponseDto;
@@ -14,18 +15,36 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/account")
-@RequiredArgsConstructor
 @Tag(name = "CRUD REST API for Account in EasyBank",
         description = "CRUD REST API in EasyBank to CREATE,UPDATE,FETCH and DELETE account details")
 public class AccountController {
 
     private final IAccountService iAccountService;
+
+    // Approach 1
+    @Value("${build.version}")
+    private String buildVersion;
+
+    //Approach 2
+    private final Environment environment;
+
+    //Approach 3
+    @Autowired
+    private AccountContactInfoDto accountContactInfoDto;
+
+    public AccountController(IAccountService iAccountService, Environment environment) {
+        this.iAccountService = iAccountService;
+        this.environment = environment;
+    }
 
     @Operation(
             summary = "create account REST api",
@@ -137,5 +156,74 @@ public class AccountController {
         } else {
             return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseDto(AccountConstant.STATUS_417, AccountConstant.MESSAGE_417_DELETE));
         }
+    }
+
+    @Operation(
+            summary = "Get version information",
+            description = "Get version information that is deployed in account-ms"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/version")
+    public ResponseEntity<String> getVersion(){
+        return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
+    }
+
+    @Operation(
+            summary = "Get home-path",
+            description = "Get home-path information that is installed in account-ms"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/home-path")
+    public ResponseEntity<String> getHomePath(){
+        return ResponseEntity.status(HttpStatus.OK).body(environment.getProperty("home"));
+    }
+
+    @Operation(
+            summary = "Get contact information",
+            description = "Get contact information that can be reached out in case of any issue"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact")
+    public ResponseEntity<AccountContactInfoDto> getContactInfo(){
+        return ResponseEntity.status(HttpStatus.OK).body(accountContactInfoDto);
     }
 }
