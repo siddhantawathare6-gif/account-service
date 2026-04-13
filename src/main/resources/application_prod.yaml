@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+build:
+  version: "1.0"
+
+account:
+  message: "Welcome to EasyBank account's releated prod API's"
+  contactDetails:
+    name: "Sid - Product Owner"
+    email: "si@gmail.com"
+  onCallSupport:
+    -(453)392-4829
+    -(236)203-0384

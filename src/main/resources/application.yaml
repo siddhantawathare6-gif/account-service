@@ -17,9 +17,17 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
+  config:
+    import:
+      - "application_qa.yaml"
+      - "application_prod.yaml"
+  profiles:
+    active:
+      - "qa"
+
 
 build:
-  version: "1.0"
+  version: "3.0"
 
 account:
   message: "Welcome to EasyBank account's releated local API's"
