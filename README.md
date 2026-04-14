@@ -7,3 +7,5 @@ Removed dockerFile and used google jib dependency to build image, shown all 3 ap
 added screenshot for cli,jvm args,env to pass args and did changes for profile concept https://github.com/siddhantawathare6-gif/account-service/pull/4
 
 introduced config server https://github.com/siddhantawathare6-gif/account-service/pull/5
+
+added dependency with rabbit mq credential in app.yaml file https://github.com/siddhantawathare6-gif/account-service/pull/6
