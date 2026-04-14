@@ -15,3 +15,5 @@ created new directory to add all services https://github.com/siddhantawathare6-g
 added common-config for docker-compose https://github.com/siddhantawathare6-gif/account-service/pull/8
 
 added QA and PROD docker-compose file https://github.com/siddhantawathare6-gif/account-service/pull/9
+
+introduced mysql and removed h2 db https://github.com/siddhantawathare6-gif/account-service/pull/10
