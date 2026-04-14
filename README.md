@@ -13,3 +13,5 @@ added dependency with rabbit mq credential in app.yaml file https://github.com/s
 created new directory to add all services https://github.com/siddhantawathare6-gif/account-service/pull/7
 
 added common-config for docker-compose https://github.com/siddhantawathare6-gif/account-service/pull/8
+
+added QA and PROD docker-compose file https://github.com/siddhantawathare6-gif/account-service/pull/9
