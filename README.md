@@ -11,3 +11,5 @@ introduced config server https://github.com/siddhantawathare6-gif/account-servic
 added dependency with rabbit mq credential in app.yaml file https://github.com/siddhantawathare6-gif/account-service/pull/6
 
 created new directory to add all services https://github.com/siddhantawathare6-gif/account-service/pull/7
+
+added common-config for docker-compose https://github.com/siddhantawathare6-gif/account-service/pull/8
