@@ -9,3 +9,5 @@ added screenshot for cli,jvm args,env to pass args and did changes for profile c
 introduced config server https://github.com/siddhantawathare6-gif/account-service/pull/5
 
 added dependency with rabbit mq credential in app.yaml file https://github.com/siddhantawathare6-gif/account-service/pull/6
+
+created new directory to add all services https://github.com/siddhantawathare6-gif/account-service/pull/7
