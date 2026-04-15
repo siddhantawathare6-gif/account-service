@@ -17,3 +17,5 @@ added common-config for docker-compose https://github.com/siddhantawathare6-gif/
 added QA and PROD docker-compose file https://github.com/siddhantawathare6-gif/account-service/pull/9
 
 introduced mysql and removed h2 db https://github.com/siddhantawathare6-gif/account-service/pull/10
+
+added eureka client https://github.com/siddhantawathare6-gif/account-service/pull/12
