@@ -19,3 +19,5 @@ added QA and PROD docker-compose file https://github.com/siddhantawathare6-gif/a
 introduced mysql and removed h2 db https://github.com/siddhantawathare6-gif/account-service/pull/10
 
 added eureka client https://github.com/siddhantawathare6-gif/account-service/pull/12
+
+communication between services using feign client https://github.com/siddhantawathare6-gif/account-service/pull/13
