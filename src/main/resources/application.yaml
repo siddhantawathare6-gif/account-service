@@ -44,3 +44,9 @@ info:
     name: account
     description: "EasyBank account application"
     version: 1.0.0
+
+logging:
+  level:
+    com:
+      account:
+        gateway: debug
