@@ -23,3 +23,5 @@ added eureka client https://github.com/siddhantawathare6-gif/account-service/pul
 communication between services using feign client https://github.com/siddhantawathare6-gif/account-service/pull/13
 
 eureka server https://github.com/siddhantawathare6-gif/account-service/pull/14
+
+added docker-compose properties for api-gateway https://github.com/siddhantawathare6-gif/account-service/pull/15
