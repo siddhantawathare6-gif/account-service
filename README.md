@@ -21,3 +21,5 @@ introduced mysql and removed h2 db https://github.com/siddhantawathare6-gif/acco
 added eureka client https://github.com/siddhantawathare6-gif/account-service/pull/12
 
 communication between services using feign client https://github.com/siddhantawathare6-gif/account-service/pull/13
+
+eureka server https://github.com/siddhantawathare6-gif/account-service/pull/14
